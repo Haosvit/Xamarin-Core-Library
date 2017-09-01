@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA2B011A-BDEE-4FCC-9768-5BDB648203FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XamarinCore</RootNamespace>
+    <AssemblyName>XamarinCore</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile44</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Converters\InvertBoolValueConverter.cs" />
+    <Compile Include="Helpers\MvxHelper.cs" />
+    <Compile Include="Localization\DeviceSizeType.cs" />
+    <Compile Include="Localization\AbstractLocalizer.cs" />
+    <Compile Include="Localization\Localizer.cs" />
+    <Compile Include="Localization\UserSetting.cs" />
+    <Compile Include="Localization\UserSettingsLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rest\IRestClient.cs" />
+    <Compile Include="Rest\RestClient.cs" />
+    <Compile Include="Rest\RestPostRequestBodyType.cs" />
+    <Compile Include="Rest\ServiceError.cs" />
+    <Compile Include="Rest\ServiceResponse.cs" />
+    <Compile Include="Rest\ServiceResponseFormat.cs" />
+    <Compile Include="Serialization\JsonHelper.cs" />
+    <Compile Include="Serialization\XmlHelper.cs" />
+    <Compile Include="StateMachine\Base\BaseCompositeState.cs" />
+    <Compile Include="StateMachine\Base\BaseSimpleState.cs" />
+    <Compile Include="StateMachine\Base\BaseState.cs" />
+    <Compile Include="StateMachine\Base\BaseStateMachine.cs" />
+    <Compile Include="StateMachine\Base\BaseVertex.cs" />
+    <Compile Include="StateMachine\Base\BaseYesNoChoice.cs" />
+    <Compile Include="StateMachine\Base\FinalState.cs" />
+    <Compile Include="StateMachine\Base\InitialState.cs" />
+    <Compile Include="StateMachine\Base\Region.cs" />
+    <Compile Include="StateMachine\Interfaces\IChoice.cs" />
+    <Compile Include="StateMachine\Interfaces\ICompositeState.cs" />
+    <Compile Include="StateMachine\Interfaces\IRegion.cs" />
+    <Compile Include="StateMachine\Interfaces\ISimpleState.cs" />
+    <Compile Include="StateMachine\Interfaces\IStateFactory.cs" />
+    <Compile Include="StateMachine\Interfaces\IStateMachine.cs" />
+    <Compile Include="StateMachine\Interfaces\ITransition.cs" />
+    <Compile Include="StateMachine\Interfaces\IVertex.cs" />
+    <Compile Include="StateMachine\TravelledEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MvvmCross.Binding, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Binding.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Core, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Core.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Localization, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Binding.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Platform, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Platform.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File, Version=5.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmCross.Plugin.File.5.1.1\lib\portable-net45+win+wpa81+wp80\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+</Project>
